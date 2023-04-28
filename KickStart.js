@@ -2,15 +2,16 @@ var current_score = 0;
 var scores = [];
 $(document).ready(function() {
     playScreen();
+
+});
+
+function clicc() {
     const click_sound = new Audio("assets/click.mp3");
-    $('#Sign').on("click", function(params) {
-        click_sound.play()
-    });
-    $('#Done').on("click", function(params) {
+    $('#Sign').on("click", function() {
         click_sound.play()
     });
 
-});
+}
 
 function cleanArea() {
     let gameArea = document.getElementById("GameArea");
@@ -50,6 +51,7 @@ function drawPlayButton(area) {
     block.onclick = () => {
         cleanArea();
         let game = new Game();
+        clicc();
     };
     area.appendChild(block);
 
@@ -80,6 +82,7 @@ function drawHighScoreButton(area) {
     block.onclick = () => {
         cleanArea();
         displayHighScores(area);
+        clicc();
     };
     area.appendChild(block);
 
@@ -158,6 +161,7 @@ function drawBackBTN(area) {
     block.onclick = () => {
         cleanArea();
         playScreen(area);
+        clicc();
     };
     area.appendChild(block);
 
@@ -234,6 +238,7 @@ function drawSaveBTN(area) {
         addHighScore(document.getElementById("nameInput").value);
         cleanArea();
         playScreen();
+        clicc();
     };
     area.appendChild(block);
 }
