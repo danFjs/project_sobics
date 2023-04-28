@@ -1,0 +1,3 @@
+addHighScore(name, score) {
+
+}
