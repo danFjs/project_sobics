@@ -192,6 +192,27 @@ class Character {
             this.game.show();
 
         }
+        if (this.hands[0].type === BlockTypes.Nuke) {
+            let targets = [];
+            for (let index = 0; index < blockMtx[this.col].length; index++) {
+                targets.push(blockMtx[this.col][index]);
+                //blockMtx[this.col][index] = 0;
+
+
+                this.explosion.play();
+                this.hands.pop();
+
+
+                $(this.picked_pic).remove()
+                $('#' + this.name).append(this.defa_pic);
+            }
+            let all_targets = [];
+            console.log(all_targets);
+            all_targets.push(targets);
+            this.game.cleanup(all_targets);
+            this.game.show();
+
+        }
     }
     die() {
         let sound_of_death = new Audio("assets/death.mp3");

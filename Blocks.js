@@ -2,6 +2,7 @@ const BlockTypes = {
     Colored: "Colored",
     Stone: "Stone",
     TNT: "TNT",
+    Nuke: "Nuke"
 }
 
 class Block {
@@ -108,6 +109,31 @@ class DynamiteBlock extends Block {
         block.style.borderRadius = "3px"
         block.style.border = "1px solid black"
         block.style.backgroundImage = "url('./assets/tnt.png')";
+        block.style.backgroundSize = "25px"
+        this.gameArea.appendChild(block)
+    }
+}
+class Nuke extends Block {
+    constructor(horizontal, vertical) {
+        super(horizontal, vertical);
+        this.type = BlockTypes.Nuke;
+    }
+    draw() {
+        if (this.inHand) {
+            return;
+        }
+        var block = document.createElement("div");
+        block.classList.add("block");
+        block.classList.add("nuke");
+        block.style.width = this.BlockWidth + "px";
+        block.style.height = this.BlockHeight + "px";
+        block.style.left = (((this.BlockWidth) * this.horizontal) + this.horizontal * 3) + "px";
+        block.style.top = (((this.BlockHeight) * this.vertical) + this.vertical * 3) + "px";
+        block.style.position = "absolute";
+        block.style.margin = "3px"
+        block.style.borderRadius = "3px"
+        block.style.border = "1px solid black"
+        block.style.backgroundImage = "url('./assets/nuke.png')";
         block.style.backgroundSize = "25px"
         this.gameArea.appendChild(block)
     }

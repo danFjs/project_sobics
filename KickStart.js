@@ -7,9 +7,7 @@ $(document).ready(function() {
 
 function clicc() {
     const click_sound = new Audio("assets/click.mp3");
-    $('#Sign').on("click", function() {
-        click_sound.play()
-    });
+    click_sound.play();
 
 }
 
