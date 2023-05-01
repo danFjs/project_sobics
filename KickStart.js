@@ -8,6 +8,7 @@ $(document).ready(function() {
 function clicc() {
     const click_sound = new Audio("assets/click.mp3");
     click_sound.play();
+    init_play();
 
 }
 
@@ -22,6 +23,8 @@ function playScreen() {
     area.style.cursor = "auto";
     drawPlayButton(area);
     drawHighScoreButton(area);
+
+
 }
 
 function drawPlayButton(area) {
