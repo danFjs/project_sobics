@@ -124,7 +124,7 @@ class Character {
         try {
             this.play_sound(this.hands[0].type);
         } catch (error) {
-            console.error("I tried :(")
+            console.error("Don't click there, you will upset the ender dragon >:(")
         }
 
     }
@@ -191,7 +191,7 @@ class Character {
             this.game.cleanup(all_targets);
             this.game.show();
 
-        }
+        } else
         if (this.hands[0].type === BlockTypes.Nuke) {
             let targets = [];
             for (let index = 0; index < blockMtx[this.col].length; index++) {
